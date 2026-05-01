@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:16
+    env_file: .env
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # core-api:
+  #   build: ./core-api
+  #   env_file: .env
+  #   ports:
+  #     - "${CORE_API_PORT:-8080}:8080"
+  #   depends_on:
+  #     - postgres
+
+  # ai-service:
+  #   build: ./ai-service
+  #   env_file: .env
+  #   ports:
+  #     - "${AI_SERVICE_PORT:-8000}:8000"
+  #   depends_on:
+  #     - postgres
+
+  # web:
+  #   build: ./web
+  #   ports:
+  #     - "5173:5173"
+
+volumes:
+  pgdata:

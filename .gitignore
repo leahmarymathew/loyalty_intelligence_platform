@@ -1,0 +1,30 @@
+# Env
+.env
+
+# Java / Spring
+core-api/target/
+core-api/.gradle/
+core-api/build/
+*.class
+
+# Python
+ai-service/.venv/
+ai-service/__pycache__/
+ai-service/**/__pycache__/
+ai-service/*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Node / Web
+web/node_modules/
+web/dist/
+web/coverage/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
