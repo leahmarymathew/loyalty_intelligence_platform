@@ -11,7 +11,8 @@ core-api/build/
 ai-service/.venv/
 ai-service/__pycache__/
 ai-service/**/__pycache__/
-ai-service/*.egg-info/
+ai-service/**/*.egg-info/
+ai-service/**/.pytest_cache/
 .pytest_cache/
 .ruff_cache/
 
