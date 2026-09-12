@@ -14,8 +14,9 @@ See [ARCHITECTURE.md](docs/ARCHITECTURE.md) for key design decisions and [BENCHM
 
 ## Status
 
-Project scaffolding only — services are not yet implemented.
+- **core-api**: schema/migrations, JPA domain entities (Tenant, Customer, PurchaseTransaction, PointsLedgerEntry), repositories, and the points ledger service (earn/redeem/adjust, idempotent, balance derived from the ledger) are in place, with database-enforced multi-tenant isolation (Postgres RLS, bound per-connection via `TenantAwareDataSource`) and an append-only ledger (trigger-enforced). 26/26 tests passing (unit + Testcontainers integration) at 86.9% line coverage. Tier engine, REST layer, and campaign worker not yet built.
+- **ai-service**, **web**: not yet started.
 
 ## Quickstart
 
-_Coming soon: `docker compose up` once the services are built out._
+_Coming soon: `docker compose up` once the services are built out. For now, `core-api` can be exercised directly via `mvn verify` (requires Docker for the Testcontainers tests)._
